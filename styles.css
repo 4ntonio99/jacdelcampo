@@ -1,0 +1,260 @@
+/* Estilos Generales */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h2 {
+    color: #387947;
+}
+
+/* =========================================
+             HERO SECTION STYLES
+========================================== */
+.hero-section {
+    /* Reemplaza esta URL con la imagen que prefieras */
+    background: url('./imgs/hero.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+/* =========================================
+             NAVBAR / HEADER STYLES
+========================================== */
+.transition-navbar {
+    transition: all 0.4s ease-in-out;
+}
+
+/* Estado cuando está arriba (Transparente) */
+.navbar-transparent {
+    background-color: transparent !important;
+}
+
+/* Estado cuando se hace scroll (Blanco y con sombra) */
+.navbar-scrolled {
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 6px -1px rgba(46, 46, 46, 0.1), 0 2px 4px -1px rgba(70, 70, 70, 0.06);
+}
+
+/* Cambiar el color de los textos del menú según el estado del navbar */
+.navbar-scrolled .navbar-brand,
+.navbar-scrolled .nav-link {
+    color: #212529 !important;
+}
+
+.navbar-scrolled .nav-link:hover {
+    color: #387947 !important;
+}
+
+/* En estado transparente, aseguramos que los textos sean blancos */
+.navbar-transparent .nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.navbar-transparent .nav-link:hover,
+.navbar-transparent .nav-link.active {
+    color: #ffffff !important;
+}
+
+.navbar-transparent .navbar-brand {
+    color: #ffffff !important;
+}
+
+/* =========================================
+        ESTILOS SOBRE NOSOTROS
+========================================== */
+#sobre-nosotros {
+    background-color: white;
+    position: relative;
+}
+
+/* Forma de fondo decorativa asimétrica estilo 3.0 */
+.bg-accent-shape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    background-color: #DFF2E3;
+    z-index: 0;
+}
+
+#sobre-nosotros .container {
+    z-index: 1;
+}
+
+/* Contenedor de imágenes superpuestas */
+.image-box-3-0 {
+    position: relative;
+    padding-bottom: 40px;
+    padding-right: 40px;
+}
+
+.main-img-container img {
+    width: 100%;
+    max-width: 460px;
+    object-fit: cover;
+    border: 4px solid #ffffff;
+}
+
+/* Imagen secundaria flotante que se sale del contenedor */
+.floating-img-container {
+    position: absolute;
+    bottom: -20px;
+    right: 10%;
+    width: 240px;
+    border: 6px solid #ffffff;
+    z-index: 3;
+}
+
+.floating-img-container img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+/* Estilos de texto y tipografía 3.0 */
+.content-box-3-0 {
+    background: #ffffff;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+    border-left: 4px solid #387947;
+}
+
+.tracking-widest {
+    letter-spacing: 0.15em;
+}
+
+.tracking-wider {
+    letter-spacing: 0.05em;
+}
+
+/* Ajuste responsivo para pantallas pequeñas */
+@media (max-width: 991.98px) {
+    .bg-accent-shape {
+        width: 100%;
+        height: 50%;
+    }
+    .image-box-3-0 {
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+    .floating-img-container {
+        width: 180px;
+        bottom: 0;
+        right: 5%;
+    }
+}
+/* =========================================
+     ESTILOS SEPARADOR PARALLAX
+========================================== */
+.parallax-separator {
+    /* Reemplaza la URL con la imagen que prefieras */
+    background: url('./imgs/heroone.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* <- Esto crea el efecto donde la imagen no se mueve con el scroll */
+    height: 350px; /* Altura de la franja separadora */
+    position: relative;
+}
+
+.parallax-content {
+    max-width: 700px;
+}
+
+/* Ajuste para dispositivos móviles donde el fixed suele dar problemas de rendimiento */
+@media (max-width: 991.98px) {
+    .parallax-separator {
+        background-attachment: scroll; /* En móviles se desactiva por compatibilidad nativa */
+    }
+}
+/* =========================================
+        ESTILOS SECCIÓN PRODUCTO
+========================================== */
+#producto {
+    background-color: #ffffff;
+    color: #111111;
+}
+
+/* Forzar formato vertical/rectangular tipo celular en las imágenes */
+.vertical-product-img {
+    width: 100%;
+    max-width: 380px;
+    height: 480px;
+    object-fit: cover;
+    border: 4px solid #ffffff;
+}
+
+.phone-mockup-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tarjeta flotante de numeración (Derecha de la imagen) */
+.accent-badge-box {
+    position: absolute;
+    bottom: 30px;
+    right: -20px;
+    min-width: 130px;
+    text-align: center;
+    border-left: 4px solid #0d6efd;
+    z-index: 2;
+}
+
+/* Tarjeta flotante de numeración (Izquierda de la imagen, para efecto en zigzag) */
+.accent-badge-box-left {
+    position: absolute;
+    bottom: 30px;
+    left: -20px;
+    min-width: 130px;
+    text-align: center;
+    border-right: 4px solid #111111;
+    z-index: 2;
+}
+
+/* Listas estilizadas */
+.feature-list-3-0 li {
+    font-size: 1.05rem;
+    color: #495057;
+}
+
+/* Ajustes responsivos para móviles */
+@media (max-width: 991.98px) {
+    .vertical-product-img {
+        height: 380px;
+        max-width: 100%;
+    }
+    .accent-badge-box, .accent-badge-box-left {
+        right: 10px;
+        left: auto;
+        bottom: 10px;
+    }
+}
+/* =========================================
+     ESTILOS SECCIÓN CONTACTO Y FOOTER
+========================================== */
+#contacto {
+    background-color: #DFF2E3;
+    position: relative;
+}
+
+/* Caja del formulario flotante con diseño limpio y bordes rectos */
+.contact-form-box {
+    background-color: #ffffff;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    border-top: 4px solid #387947;
+}
+
+/* Inputs personalizados estilo 3.0 */
+.contact-form-box .form-control:focus {
+    border-color: #387947;
+    box-shadow: none;
+}
+
+/* Hover para redes sociales en el footer */
+.hover-primary:hover {
+    color: #387947 !important;
+    transition: color 0.3s ease;
+}
